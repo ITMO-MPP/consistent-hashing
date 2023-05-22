@@ -4,15 +4,21 @@
 
 ## Постановка задачи
 
-В файле [`ConsistentHash.java`](src/main/java/ConsistentHash.java) находится описание интерфейса, который вам предстоит реализовать.
-Свой код вы должны писать на языке Java в файле [`ConsistentHashImpl.java`](src/main/java/ConsistentHashImpl.java).
+В файле [`ConsistentHash.java`](src/ConsistentHash.java) находится описание интерфейса, который вам предстоит реализовать.
+Свой код вы должны писать на языке Java в файле [`ConsistentHashImpl.java`](src/ConsistentHashImpl.java).
+
+Для решения на Kotlin откройте Java решения и нажмите Ctrl+Alt+Shift+K (Cmd+Alt+Shift+K на MacOS) в IntelliJ IDEA для
+конвертации соответствующего фала из XXX.java в XXX.kt. На вопрос
+"Some code in the rest of your project may require corrections after performing this conversion.
+Do you want to find such code and correct it too?" отвечайте "No".
+Пишите код в соответствующем kt файле, который получится после конвертации.
 
 ### Вспомогательные классы
-Вспомогательные классы описаны в файлах [`Shard.kt`](src/main/java/Shard.java) и [`HashRange.kt`](src/main/java/HashRange.java).
+
+Вспомогательные классы описаны в файлах [`Shard.kt`](src/Shard.java) и [`HashRange.kt`](src/HashRange.java).
 
 Класс `Shard` описывает узел системы и задаётся своим именем. Класс `HashRange` описывает отрезок хешей, перемещаемых с существующего узла на новый узел
 (или с удаляемого узла на существующий узел), и задаётся своими левой и правой границами (обе границы включены в диапазон).
-
 
 ### Описание операций
 
@@ -32,16 +38,16 @@
 
 ## Тестирование
 
-Тестирования реализации происходит путем запуска тестов [`UnitTest`](src/test/java/UnitTest.java) и
-[`StressTest`](src/test/java/StressTest.java).
+Тестирования реализации происходит путем запуска тестов [`UnitTest`](test/UnitTest.java) и
+[`StressTest`](test/StressTest.java).
 Из командной строки: `./gradlew test`.
 
 * unit-тест проверяет несколько базовых сценариев корректности вашего решения
-* stress-тест выполняет набор случайных тестов из папки [`resources`](src/test/resources)
+* stress-тест выполняет набор случайных тестов из папки [`resources`](resources)
 
 ## Формат сдачи
 
 Выполняйте задание в этом репозитории.
-**Код процесса должен быть реализован в одном файле [`ConsistentHashImpl.kt`](src/main/java/ConsistentHashImpl.java)**.
+**Код процесса должен быть реализован в одном файле [`ConsistentHashImpl.kt`](src/ConsistentHashImpl.java)**.
 
 

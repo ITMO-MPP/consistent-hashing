@@ -80,7 +80,7 @@ public class StressTest {
     @Test
     public void testStress() throws IOException {
         List<Path> filesList;
-        try (var files = Files.list(Paths.get("tests"))) {
+        try (var files = Files.list(Paths.get("resources"))) {
             filesList = files.toList();
         }
         for (var curPath : filesList) {
