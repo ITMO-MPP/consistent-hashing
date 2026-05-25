@@ -1,18 +1,18 @@
-import java.util.*;
-
-public class ConsistentHashImpl<K> implements ConsistentHash<K> {
-    @Override
-    public Shard getShardByKey(K key) {
-        throw new UnsupportedOperationException("Not implemented");
+/**
+ * Consistent hashing implementation.
+ *
+ * @author <First-Name> <Last-Name> // TODO: replace with your name
+ */
+class ConsistentHashImpl<K> : ConsistentHash<K> {
+    override fun getShardByKey(key: K): Shard {
+        TODO("Not yet implemented")
     }
 
-    @Override
-    public Map<Shard, Set<HashRange>> addShard(Shard newShard, Set<Integer> vnodeHashes) {
-        throw new UnsupportedOperationException("Not implemented");
+    override fun addShard(newShard: Shard, vnodeHashes: Set<Int>): Map<Shard, Set<HashRange>> {
+        TODO("Not yet implemented")
     }
 
-    @Override
-    public Map<Shard, Set<HashRange>> removeShard(Shard shard) {
-        throw new UnsupportedOperationException("Not implemented");
+    override fun removeShard(shard: Shard): Map<Shard, Set<HashRange>> {
+        TODO("Not yet implemented")
     }
 }

@@ -1,10 +1,11 @@
-import java.util.Map;
-import java.util.Set;
+data class Shard(val name: String)
 
-public interface ConsistentHash<K> {
-    Shard getShardByKey(K key);
+data class HashRange(val leftBorder: Int, val rightBorder: Int)
 
-    Map<Shard, Set<HashRange>> addShard(Shard newShard, Set<Integer> vnodeHashes);
+interface ConsistentHash<K> {
+    fun getShardByKey(key: K): Shard
 
-    Map<Shard, Set<HashRange>> removeShard(Shard shard);
+    fun addShard(newShard: Shard, vnodeHashes: Set<Int>): Map<Shard, Set<HashRange>>
+
+    fun removeShard(shard: Shard): Map<Shard, Set<HashRange>>
 }

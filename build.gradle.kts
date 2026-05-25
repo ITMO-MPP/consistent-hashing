@@ -1,6 +1,6 @@
 plugins {
+    kotlin("jvm") version "2.3.10"
     java
-    kotlin("jvm") version "1.8.10"
 }
 
 repositories {
@@ -8,24 +8,27 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
-    implementation("com.google.code.gson:gson:2.9.1")
-}
-
-tasks.test {
-    useJUnitPlatform()
+    testImplementation("org.junit.jupiter:junit-jupiter:6.1.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.1.0")
 }
 
 sourceSets.main {
-    java.setSrcDirs(listOf("src"))
-    resources.setSrcDirs(listOf("resources"))
+    java.srcDir("src")
+    resources.srcDir("resources")
 }
 
 sourceSets.test {
-    java.setSrcDirs(listOf("test"))
+    java.srcDir("test")
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(21)
+}
+
+tasks {
+    test {
+        useJUnitPlatform()
+        testLogging.showStandardStreams = true
+    }
 }
